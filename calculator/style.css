@@ -4,16 +4,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    user-select: none;
-}
-
 .main {
     position: relative;
     display: flex;
@@ -24,9 +14,20 @@ body {
     box-shadow: 2px 20px 50px 20px rgba(0, 0, 0, 0.20),
     inset -4px -8px 15px rgba(0, 0, 0, 0.20);
     background-color: rgba(95, 98, 107, 0.627);
-    background: #e2e0df;
+    background: rgba(0, 0, 0, 0.585);
     border-radius: 15px
 }
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+}
+
 
 .display {
     position: relative;
@@ -35,9 +36,9 @@ body {
     width: 90%;
     border: none;
     outline: none;
-    background: #e3e3e3;
-    box-shadow: inset 8px 8px 100px #abadaf,
-                    inset -10px -10px 8px #dbdee0;
+    background: #aeb7a1;
+    box-shadow: inset 8px 8px 100px rgb(128, 132, 118),
+                    inset -10px -10px 8px rgba(131, 139, 124, 0.575);
     margin-bottom: 2px;
     border-radius: 10px;
     text-align: right;
@@ -59,7 +60,7 @@ body {
     width: 50px;
     padding: 10px;
     border-radius: 10px;
-    background: #e4eddc;
+    background: #f9f9f96b;
     border: none;
     outline: none;
     margin: 0 10px 5px;
@@ -67,19 +68,25 @@ body {
     font-size: 1.3em;
     font-weight: 500;
     transition: .1s;
-    box-shadow: 5px 5px 8px #00000020,
-    -5px -5px 8px #ffff;
+    box-shadow: 5px 5px 8px #28232320,
+    -5px -5px 8px rgb(77, 74, 74);
 }
 
 .buttons button:hover {
     background: rgba(18, 16, 16, 0.1)
 }
 
+#control {
+    background: rgb(105, 160, 81);
+}
+
+
 #equalTo {
     padding: 10px;
     margin: 0 10px;
     width: 125px;
-    background: #58D68D
+    background: #096a32;
+    color: white;
 }
 
 #equalTo:hover {
@@ -87,7 +94,7 @@ body {
 }
 
 #clear {
-    background: #FF8A65;
+    background: #f45b2cd8;
     font-weight: 1000;
 }
 
