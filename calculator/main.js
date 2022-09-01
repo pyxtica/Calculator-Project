@@ -1,36 +1,48 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    let body = document.querySelector('body');
-    let result = document.querySelector('#result');
+function getInputValue(){
+    let input = event.target.innerText
+    console.log(input);
+    printValue(input);
+}
 
-    let clear = document.querySelector('#clear');
-    let history = document.querySelector('#history');
-    let equalTo = document.querySelector('#equalTo');
-    let delete_single_num = document.querySelector('#delete_single_num');
-    
-    let Normal_btn = document.querySelectorAll('#Normal_btn');
-    
-    let initial_value = "";
-    
-    Normal_btn.forEach((Normal_btn, index)=>{
-    Normal_btn.addEventListener('click', function(){
-    let text = this.innerHTML;
-    initial_value += text;
-    result.innerHTML = initial_value;
-    });
-    });
-    
-    equalTo.addEventListener('click', function(){
-    if (result.innerHTML != "") {
-    history.innerHTML = result.innerHTML;
-    result.innerHTML = eval(result.innerHTML);
-    initial_value = eval(result.innerHTML);
-    }else{
-    alert('please enter any Number');
+let buttons = document.getElementsByTagName('button');
+console.log(buttons.length);
+for(var i =0; i<buttons.length;i++){
+    buttons[i].setAttribute('onclick','getInputValue()');
+}
+
+function printValue(val){
+    let out = document.querySelector("#result");
+    let current = out.innerHTML;
+    if(out.innerHTML == "0"){
+      
+      if(val!= "C"){ 
+        out.innerHTML ="";
+        out.innerHTML += val;
+      }
     }
-    });
-    
-    clear.addEventListener('click', function(){
-    result.innerHTML = "";
-    initial_value = "";
-    });    
-    });
+    else{
+      if(val!= "C" && val!="="){ 
+        out.innerHTML += val;
+      }
+      if(val =="="){
+        let res = out.innerHTML;
+        out.innerHTML = eval(res);
+      }
+      if(val == "C"){
+        out.innerHTML = "0";
+      }
+    }
+  }
+
+  percent.onclick = () => {
+    oriMsg = screen.innerHTML;
+    var i = Math.max(
+        oriMsg.lastIndexOf("+"), 
+        oriMsg.lastIndexOf("–"), 
+        oriMsg.lastIndexOf("×"), 
+        oriMsg.lastIndexOf("÷")
+    );
+    lastNum = oriMsg.substring(i+1, oriMsg.length);
+    lastNum /= 100;
+    screen.innerHTML = oriMsg.substring(0, i + 1) + lastNum;
+}
